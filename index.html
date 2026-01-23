@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arman | Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg-main:#e7efd2;
+  --bg-dark:#083d2b;
+  --accent:#ff1f1f;
+  --section-about:#fef6e4;
+  --section-service:#e0f2fe;
+  --section-project:#ede9fe;
+  --section-education:#ecfeff;
+  --section-contact:#022c22;
+  --text-dark:#0f2f24;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg-main);
+  color:var(--text-dark);
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  position:sticky;
+  top:0;
+  background:var(--bg-main);
+  z-index:100;
+}
+
+.logo{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#cfe3c2;
+  border:6px solid var(--bg-dark);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text-dark);
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--accent);
+}
+
+.btn-contact{
+  background:var(--accent);
+  color:#fff;
+  padding:10px 20px;
+  border-radius:8px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  align-items:center;
+  padding:80px 60px;
+  gap:40px;
+}
+
+.hero h1{
+  font-size:3.2rem;
+}
+
+.hero h1 span{
+  font-weight:700;
+}
+
+.hero h2{
+  font-size:1.6rem;
+  color:#3a6b5c;
+}
+
+.hero h3{
+  font-size:1.3rem;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:550px;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.hero-buttons a{
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:30px;
+  margin-right:15px;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+
+.btn-secondary{
+  background:#fff;
+  color:#000;
+}
+
+.hero-buttons a:hover{
+  transform:translateY(-3px);
+}
+
+/* SOCIAL */
+.social{
+  margin-top:30px;
+}
+
+.social span{
+  display:block;
+  margin-bottom:10px;
+}
+
+.icons i{
+  font-size:1.3rem;
+  margin-right:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.icons i:hover{
+  color:var(--accent);
+}
+
+/* HERO IMAGE */
+.hero-image{
+  position:relative;
+  display:flex;
+  justify-content:center;
+}
+
+.circle{
+  width:360px;
+  height:360px;
+  background:var(--bg-dark);
+  border-radius:50%;
+  position: absolute;
+}
+
+.hero-image img{
+  width:280px;
+  z-index:2;
+  border-radius:20px;
+}
+
+/* SECTIONS */
+.section{
+  padding:90px 20px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.section h1{
+  font-size:2.2rem;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* ABOUT */
+.about{
+  background:var(--section-about);
+  text-align:center;
+}
+
+.about p{
+  max-width:750px;
+  margin:auto;
+  line-height:1.8;
+}
+
+/* SERVICES */
+.service{
+  background:var(--section-service);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.grid li{
+  list-style:none;
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.grid li:hover{
+  transform:translateY(-5px);
+}
+
+/* PROJECTS */
+.projects{
+  background:var(--section-project);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+/* EDUCATION */
+.education{
+  background:var(--section-education);
+  text-align:center;
+}
+
+.timeline{
+  max-width:600px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* CONTACT */
+.contact{
+  background:var(--section-contact);
+  color:#fff;
+  text-align:center;
+}
+
+.contact p{
+  opacity:0.9;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{
+    padding:20px;
+  }
+
+  nav ul{
+    gap:15px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:60px 20px;
+  }
+
+  .hero p{
+    margin:auto;
+  }
+
+  .hero-image{
+    margin-top:40px;
+  }
+
+  .circle{
+    width:280px;
+    height:280px;
+  }
+
+  .hero-image img{
+    width:220px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo"></div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="btn-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div>
+    <h1>Hi, I'm <span>Arman</span></h1>
+    <h2>Freelance Software & Web Developer</h2>
+    <h3>Aspiring UI/UX Designer</h3>
+    <p>
+      A computer science student with strong interest in UI/UX design and software development.
+      Passionate about clean interfaces, usability, and building real-world applications.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Contact Me</a>
+      <a href="resume.pdf" class="btn-secondary" download>Resume</a>
+    </div>
+
+    <div class="social">
+      <span>Find me on</span>
+      <div class="icons">
+        <i class="fab fa-github"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-behance"></i>
+        <i class="fab fa-dribbble"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="circle"></div>
+    <img src="c:\Users\ARMAN\Downloads\WhatsApp Image.jpeg" alt="Arman Photo">
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container">
+    <h1>About Me</h1>
+    <p>
+      I am Arman, a Computer Science & Engineering student passionate about software development,
+      UI/UX design, and problem-solving. I love building clean, user-friendly applications.
+    </p>
+  </div>
+</section>
+
+<section class="section service" id="service">
+  <div class="container">
+    <h1>Services</h1>
+    <ul class="grid">
+      <li>Web Design (UI/UX)</li>
+      <li>Frontend Development</li>
+      <li>Responsive Websites</li>
+      <li>Software & GUI Apps</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section projects" id="projects">
+  <div class="container">
+    <h1>Projects</h1>
+    <div class="cards">
+      <div class="card">Mini ATM System – GUI Application</div>
+      <div class="card">Personal Portfolio Website</div>
+      <div class="card">Academic & Mini Projects</div>
+    </div>
+  </div>
+</section>
+
+<section class="section education" id="education">
+  <div class="container">
+    <h1>Education</h1>
+    <div class="timeline">
+      <p><b>B.Sc. in Computer Science & Engineering</b></p>
+      <p>International Islamic University Chittagong (IIUC)</p>
+      <p>Currently Studying</p>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <h1>Contact</h1>
+    <p>Email: arman@example.com</p>
+    <p>GitHub: github.com/arman</p>
+    <p>LinkedIn: linkedin.com/in/arman</p>
+  </div>
+</section>
+
+</body>
+</html>
